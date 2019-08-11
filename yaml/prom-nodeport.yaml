@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-08-06T08:23:32Z"
+  labels:
+    app: prometheus-operator-prometheus
+    chart: prometheus-operator-6.4.0
+    heritage: Tiller
+    release: prometheus-operator
+  name: prometheus-operator-prometheus
+  namespace: monitoring
+  resourceVersion: "2158844"
+  selfLink: /api/v1/namespaces/monitoring/services/prometheus-operator-prometheus
+  uid: 459067d5-e999-473a-b154-d6addca56eb3
+spec:
+  clusterIP: 10.100.74.190
+  ports:
+  - name: web
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: prometheus
+    prometheus: prometheus-operator-prometheus
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

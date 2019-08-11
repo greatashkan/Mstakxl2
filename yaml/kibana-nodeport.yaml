@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-08-08T13:02:57Z"
+  labels:
+    app: kibana
+  name: kibana
+  namespace: kube-logging
+  resourceVersion: "2439790"
+  selfLink: /api/v1/namespaces/kube-logging/services/kibana
+  uid: 57232572-a491-4b64-9fb9-a7f3c298fd6c
+spec:
+  clusterIP: 10.108.213.158
+  ports:
+  - port: 5601
+    protocol: TCP
+    targetPort: 5601
+  selector:
+    app: kibana
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
